@@ -17,7 +17,9 @@
               calamares-nixos-extensions = prev.calamares-nixos-extensions.overrideAttrs ( old: {
                 patches = [
                   ./calamares-nixos-extensions/install-nixbook.patch
-                  ./calamares-nixos-extensions/update-desktop-entries.patch ];
+                  ./calamares-nixos-extensions/update-desktop-entries.patch
+                  ./calamares-nixos-extensions/remove-unfree-screen.patch
+                ];
               });
             })
           ];
