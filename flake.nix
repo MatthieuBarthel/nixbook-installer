@@ -2,7 +2,7 @@
   description = "Custom NixOS Installer ISO with Calamares";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
   };
 
@@ -12,17 +12,7 @@
         pkgs = import nixpkgs {
           inherit system;
           config.allowUnfree = true;
-          overlays = [
-            (final: prev: {
-              calamares-nixos-extensions = prev.calamares-nixos-extensions.overrideAttrs ( old: {
-                patches = [
-                  ./calamares-nixos-extensions/install-nixbook.patch
-                  ./calamares-nixos-extensions/update-desktop-entries.patch
-                  ./calamares-nixos-extensions/remove-unfree-screen.patch
-                ];
-              });
-            })
-          ];
+          patches = [ ./calamares-nixos-extensions.patch ];
         };
 
         nixosConfiguration = nixpkgs.lib.nixosSystem {
@@ -32,8 +22,8 @@
 
             {
               nix.extraOptions = "experimental-features = nix-command flakes";
-              isoImage.isoName = "nixos-custom-installer.iso";
-              system.stateVersion = "25.05";
+              image.fileName = "nixos-custom-installer.iso";
+              system.stateVersion = "25.11";
             }
           ];
         };

@@ -1,35 +1,30 @@
-diff --git a/config/modules/packagechooser.conf b/config/modules/packagechooser.conf
-index 663f267..75bf5ec 100644
---- a/config/modules/packagechooser.conf
-+++ b/config/modules/packagechooser.conf
-@@ -63,7 +63,7 @@ labels:
+diff --git a/pkgs/by-name/ca/calamares-nixos-extensions/src/config/modules/packagechooser.conf b/pkgs/by-name/ca/calamares-nixos-extensions/src/config/modules/packagechooser.conf
+index 362084beda17..46f5cf36a2ad 100644
+--- a/pkgs/by-name/ca/calamares-nixos-extensions/src/config/modules/packagechooser.conf
++++ b/pkgs/by-name/ca/calamares-nixos-extensions/src/config/modules/packagechooser.conf
+@@ -7,91 +7,22 @@ method: legacy
+ labels:
+     step: "Desktop"
  
- # (Optional) item-*id* of pre-selected list-view item.
- # Pre-selects one of the items below.
 -default: gnome
 +default: nixbook
  
- # Items to display in the chooser. In general, this should be a
- # pretty short list to avoid overwhelming the UI. This is a list
-@@ -148,96 +148,18 @@ default: gnome
- # key which will override the data from AppStream.
  items:
- 
 -    - id: gnome
 -      packages: [ gnome ]
 -      name: GNOME
 -      description: "<html>Every part of GNOME has been designed to make it simple and easy to use. It provides a focused working environment that helps you get things done. GNOME is a popular choice and well tested on NixOS.<br/>
 -                    <br/>
 -                    Learn more at <a href=\"https://www.gnome.org/\">gnome.org</a></html>"
--      screenshot: "/run/current-system/sw/share/calamares/images/gnome.png"
--
+-      screenshot: "images/gnome.jpg"
+ 
 -    - id: plasma6
 -      packages: [ plasma6 ]
 -      name: Plasma
 -      description: "<html>Plasma is made to stay out of the way as it helps you get things done. But under its light and intuitive surface, it's a highly customizable. So you're free to choose ways of usage right as you need them and when you need them. Plasma is a popular choice and well tested on NixOS.<br/>
 -                    <br/>
 -                    Learn more at <a href=\"https://kde.org/plasma-desktop/\">kde.org/plasma-desktop</a></html>"
--      screenshot: "/run/current-system/sw/share/calamares/images/plasma6.png"
+-      screenshot: "images/plasma6.jpg"
 -
 -    - id: xfce
 -      packages: [ xfce ]
@@ -37,7 +32,7 @@ index 663f267..75bf5ec 100644
 -      description: "<html>Xfce is a lightweight desktop environment. It aims to be fast and low on system resources, while still being visually appealing and user friendly.<br/>
 -                    <br/>
 -                    Learn more at <a href=\"https://www.xfce.org/\">xfce.org</a></html>"
--      screenshot: "/run/current-system/sw/share/calamares/images/xfce.png"
+-      screenshot: "images/xfce.jpg"
 -
 -    - id: pantheon
 -      packages: [ pantheon ]
@@ -45,7 +40,7 @@ index 663f267..75bf5ec 100644
 -      description: "<html>Pantheon is the default desktop of Elementary OS. It provides a productive and intuitive user experience while also being visually appealing.<br/>
 -                    <br/>
 -                    Learn more at <a href=\"https://elementary.io/docs/learning-the-basics\">elementary.io/docs/learning-the-basics</a></html>"
--      screenshot: "/run/current-system/sw/share/calamares/images/pantheon.png"
+-      screenshot: "images/pantheon.jpg"
 -
 -    - id: cinnamon
 -      packages: [ cinnamon ]
@@ -53,15 +48,21 @@ index 663f267..75bf5ec 100644
 -      description: "<html>Cinnamon is a desktop which provides advanced innovative features and a traditional user experience. The emphasis is put on making users feel at home and providing them with an easy to use and comfortable desktop experience.<br/>
 -                    <br/>
 -                    Learn more at <a href=\"https://projects.linuxmint.com/cinnamon/\">projects.linuxmint.com/cinnamon</a></html>"
--      screenshot: "/run/current-system/sw/share/calamares/images/cinnamon.png"
--
++    - id: nixbook
++      packages: [ nixbook ]
++      name: Nixbook
++      description: "<html>A user friendly, lightweight, durable, and auto updating operating system build on top of NixOS. Includes Google Chrome, Zoom, Libre office and an app store.<br/><b>4 gigs of ram and 4 cores recommended</b>
++                    <br/><br/>
++                    <a href=\"https://github.com/mkellyxp/nixbook\">Learn more</a></html>"
+       screenshot: "images/cinnamon.jpg"
+ 
 -    - id: mate
 -      packages: [ mate ]
 -      name: MATE
 -      description: "<html>The MATE Desktop Environment is the continuation of GNOME 2. It provides an intuitive and attractive desktop environment.<br/>
 -                    <br/>
 -                    Learn more at <a href=\"https://mate-desktop.org/\">mate-desktop.org</a></html>"
--      screenshot: "/run/current-system/sw/share/calamares/images/mate.png"
+-      screenshot: "images/mate.jpg"
 -
 -    - id: enlightenment
 -      packages: [ enlightenment ]
@@ -69,7 +70,7 @@ index 663f267..75bf5ec 100644
 -      description: "<html>Enlightenment is a Window Manager, Compositor and Minimal Desktop. Enlightenment is classed as a desktop shell as it provides everything you need to operate your desktop or laptop, but it is not a full application suite.<br/>
 -                    <br/>
 -                    Learn more at <a href=\"https://www.enlightenment.org/\">enlightenment.org</a></html>"
--      screenshot: "/run/current-system/sw/share/calamares/images/enlightenment.png"
+-      screenshot: "images/enlightenment.jpg"
 -
 -    - id: lxqt
 -      packages: [ lxqt ]
@@ -77,7 +78,7 @@ index 663f267..75bf5ec 100644
 -      description: "<html>LXQt is a lightweight Qt desktop environment. It will not get in your way. It will not hang or slow down your system. It is focused on being a classic desktop with a modern look and feel.<br/>
 -                    <br/>
 -                    Learn more at <a href=\"https://lxqt-project.org/\">lxqt-project.org</a></html>"
--      screenshot: "/run/current-system/sw/share/calamares/images/lxqt.png"
+-      screenshot: "images/lxqt.jpg"
 -
 -    # Lumina is not yet stable enough, once it is, simply uncommenting the lines below is all that's needed to enable it as an option
 -    #- id: lumina
@@ -85,7 +86,7 @@ index 663f267..75bf5ec 100644
 -    #  name: Lumina
 -    #  description: "<html>Lumina is designed to have a small footprint, giving your system the best performance possible. It is built to flow seamlessly between computer tasks and offers several integrated utilities in one convenient package.<br/>
 -    #                - Learn more at <a href=\"https://lumina-desktop.org/\">lumina-desktop.org</a></html>"
--    #  screenshot: "/run/current-system/sw/share/calamares/images/lumina.png"
+-    #  screenshot: "images/lumina.jpg"
 -
 -    - id: budgie
 -      packages: [ budgie ]
@@ -93,33 +94,103 @@ index 663f267..75bf5ec 100644
 -      description: "<html>The Budgie Desktop is a feature-rich, modern desktop designed to keep out the way of the user.<br/>
 -                    <br/>
 -                    Learn more at <a href=\"https://docs.buddiesofbudgie.org/\">buddiesofbudgie.org</a></html>"
--      screenshot: "/run/current-system/sw/share/calamares/images/budgie.png"
--
--    - id: deepin
--      packages: [ deepin ]
--      name: Deepin
--      description: "<html>The Deepin Desktop Environment is an elegant, easy to use and reliable desktop environment.<br/>
--                    <br/>
--                    Learn more at <a href=\"https://www.deepin.org/\">deepin.org</a></html>"
--      screenshot: "/run/current-system/sw/share/calamares/images/deepin.png"
+-      screenshot: "images/budgie.jpg"
 -
 -    - id: ""
 -      packages: []
 -      name: "No desktop"
--      screenshot: "/run/current-system/sw/share/calamares/images/nodesktop.png"
+-      screenshot: "images/nodesktop.jpg"
 -      description: "A minimal system without a graphical user interface will be installed. This is great for servers or custom setups with window managers. The configuration can be changed after installation."
-+    - id: nixbook
-+      packages: [ nixbook ]
-+      name: Nixbook
-+      description: "<html>A user friendly, lightweight, durable, and auto updating operating system build on top of NixOS. Includes Google Chrome, Zoom, Libre office and an app store.<br/><b>4 gigs of ram and 4 cores recommended</b>
-+                    <br/><br/>
-+                    <a href=\"https://github.com/mkellyxp/nixbook\">Learn more</a></html>"
-+      screenshot: "/run/current-system/sw/share/calamares/images/cinnamon.png"
-+
 +    - id: nixbook-lite
 +      packages: [ nixbook-lite ]
 +      name: Nixbook lite
 +      description: "<html>A user friendly, lightweight, durable, and auto updating operating system build on top of NixOS, Basic apps and web browsing ONLY<br/><b>2 gigs of ram and 2 cores recommended.</b>
 +                    <br/><br/>
 +                    <a href=\"https://github.com/mkellyxp/nixbook\">Learn more</a></html>"
-+      screenshot: "/run/current-system/sw/share/calamares/images/cinnamon.png"
++      screenshot: "images/cinnamon.jpg"
+diff --git a/pkgs/by-name/ca/calamares-nixos-extensions/src/config/settings.conf b/pkgs/by-name/ca/calamares-nixos-extensions/src/config/settings.conf
+index 6a16f17a5754..cad57354bf80 100644
+--- a/pkgs/by-name/ca/calamares-nixos-extensions/src/config/settings.conf
++++ b/pkgs/by-name/ca/calamares-nixos-extensions/src/config/settings.conf
+@@ -116,7 +116,6 @@ sequence:
+   - keyboard
+   - users
+   - packagechooser
+-  - notesqml@unfree
+   - partition
+   - summary
+ - exec:
+diff --git a/pkgs/by-name/ca/calamares-nixos-extensions/src/modules/nixos/main.py b/pkgs/by-name/ca/calamares-nixos-extensions/src/modules/nixos/main.py
+index 85e259d42d11..d2a916682da6 100644
+--- a/pkgs/by-name/ca/calamares-nixos-extensions/src/modules/nixos/main.py
++++ b/pkgs/by-name/ca/calamares-nixos-extensions/src/modules/nixos/main.py
+@@ -29,6 +29,7 @@ cfghead = """# Edit this configuration file to define what should be installed o
+   imports =
+     [ # Include the results of the hardware scan.
+       ./hardware-configuration.nix
++      @@nixbook_base_path@@
+     ];
+ 
+ """
+@@ -385,6 +386,15 @@ def run():
+         if gs.value("bootLoader") is None
+         else gs.value("bootLoader")["installPath"]
+     )
++    # Nixbook - pre install
++    if gs.value("packagechooser_packagechooser") == "nixbook":
++        variables["nixbook_base_path"] = "../nixbook/base.nix"
++    elif gs.value("packagechooser_packagechooser") == "nixbook-lite":
++        variables["nixbook_base_path"] = "../nixbook/base_lite.nix"
++
++    libcalamares.utils.host_env_process_output(
++        ["git", "clone", "https://github.com/mkellyxp/nixbook", root_mount_point + "/etc/nixbook"], None
++    )
+ 
+     # Pick config parts and prepare substitution
+ 
+@@ -680,7 +690,7 @@ def run():
+         cfg += cfgfirefox
+ 
+     # Check if unfree packages are allowed
+-    free = True
++    free = False
+     if gs.value("nixos_allow_unfree"):
+         free = False
+         cfg += cfgunfree
+@@ -821,4 +831,36 @@ def run():
+     except:
+         return (_("nixos-install failed"), _("Installation failed to complete"))
+ 
++    # Nixbook - post install
++    nixbook_post_install_script_path = "/tmp/nixbook_post_install.sh"
++
++    nixbook_post_install_script = """#!/usr/bin/env bash
++su {user} -c "rm -rf ~/*"
++su {user} -c "mkdir -p ~/Desktop ~/Documents ~/Downloads ~/Pictures ~/.local/share"
++""".format(user = gs.value("username"))
++
++    if gs.value("packagechooser_packagechooser") == "nixbook":
++        nixbook_post_install_script += """
++su {user} -c "cp -R /etc/nixbook/config/config ~/.config"
++su {user} -c "cp /etc/nixbook/config/desktop/* ~/Desktop/"
++su {user} -c "cp -R /etc/nixbook/config/applications ~/.local/share/applications"
++flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
++""".format(user = gs.value("username"))
++
++    elif gs.value("packagechooser_packagechooser") == "nixbook-lite":
++        nixbook_post_install_script += """
++su {user} -c "cp -R /etc/nixbook/config/config_lite ~/.config"
++su {user} -c "cp /etc/nixbook/config/desktop_lite/* ~/Desktop/"
++su {user} -c "cp -R /etc/nixbook/config/applications_lite ~/.local/share/applications"
++""".format(user = gs.value("username"))
++
++    with open(root_mount_point + nixbook_post_install_script_path, 'w') as f:
++        f.write(nixbook_post_install_script)
++
++    os.chmod(root_mount_point + nixbook_post_install_script_path, 0o775)
++
++    libcalamares.utils.host_env_process_output(["nixos-enter", "--root", root_mount_point, "--command", nixbook_post_install_script_path], None)
++
++    os.remove(root_mount_point + nixbook_post_install_script_path)
++
+     return None
